@@ -6,6 +6,7 @@
 			"repeat": "Repeat",
 			"mosmixStation": "MOSMIX Station",
 			"lookAheadHours": "Look ahead hours",
+			"nextHours": "Query x Hours",
 			"additionalFields": "Additional fields",
 			"topic": "Topic"
 		},

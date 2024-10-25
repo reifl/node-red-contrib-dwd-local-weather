@@ -5,7 +5,8 @@
         defaults: {
             name: { "value": "" },
             mosmixStation: { "value": null, "required": true, "validate": RED.validators.regex(/[A-Z0-9]{3,5}/) },
-            lookAheadHours: { "value": "0", "required": true, "validate": RED.validators.number() },
+            lookAheadHours: { "value": 0, "required": true, "validate": RED.validators.number() },
+            nextHours: {"value": 0, "required": true, "validate": RED.validators.number() },
             additionalFields: { "value": "" },
             omitMessageOnStart: { "value": true },
             repeat: { "value": "0", "validate":function(v) { return (v>=0); } },
@@ -34,6 +35,10 @@
     </div>
     <div class="form-row" style="padding-left: 10px">
         <span data-i18n="dwdweather.description.lookAheadHours"></span>
+    </div>
+    <div class="form-row">
+        <label for="node-input-nextHours"><i class="icon-arrow-right"></i> <span data-i18n="dwdweather.label.nextHours"></span></label>
+        <input type="text" id="node-input-nextHours" placeholder="nextHours">
     </div>
     <div class="form-row">
         <label for="node-input-omitMessageOnStart"><i class="fa fa-crosshairs"></i> <span data-i18n="dwdweather.label.omitMessageOnStart"></span></label>
