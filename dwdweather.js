@@ -254,7 +254,7 @@ module.exports = function (RED) {
     }
   }
 
-  function PayloadForForecastDate(forecastDate, node) {
+  function payloadForForecastDate(forecastDate, node) {
     var payload = {
       station: weatherForecast[node.mosmixStation].description,
       tempc: getForecastedTemperature(node.mosmixStation, forecastDate),
@@ -386,7 +386,7 @@ module.exports = function (RED) {
             try {
               msg.topic = config.topic;
               if (nextHours == 0) {
-                msg.payload = PayloadForForecastDate(forecastDate, node);
+                msg.payload = payloadForForecastDate(forecastDate, node);
               } else {
                 var result = [];
                 
@@ -395,7 +395,7 @@ module.exports = function (RED) {
                   forecastDate.setTime(
                     forecastDate.getTime() + (lookAheadHours + i) * 3600000
                   );
-                  result.push(PayloadForForecastDate(forecastDate, node));
+                  result.push(payloadForForecastDate(forecastDate, node));
 
                   msg.payload =result;
                 }
